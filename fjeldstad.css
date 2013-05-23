@@ -632,4 +632,6 @@ img.dropshadow {
 	-moz-box-shadow: 0 0 5px 5px #eeeeee;
   	-webkit-box-shadow: 0 0 5px 5px #eeeeee;
   	box-shadow: 0 0 5px 5px #eeeeee;
+  	padding: 5px;
+  	background-color: #ffffff;
 }
