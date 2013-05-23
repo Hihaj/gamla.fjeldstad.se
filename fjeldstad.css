@@ -627,3 +627,9 @@ div.startintro li, div#artikel li, div#forfattarinfo li {
 div.startintro p {
 	margin: 10px 0px 10px 0px;
 }
+
+img.dropshadow {
+	-moz-box-shadow: 0 0 5px 5px #eeeeee;
+  	-webkit-box-shadow: 0 0 5px 5px #eeeeee;
+  	box-shadow: 0 0 5px 5px #eeeeee;
+}
