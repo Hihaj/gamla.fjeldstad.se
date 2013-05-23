@@ -628,6 +628,7 @@ div.startintro p {
 	margin: 10px 0px 10px 0px;
 }
 
+div#forfattarinfo img.dropshadow,
 div.start-minibild img.dropshadow,
 img.dropshadow {
 	-moz-box-shadow: 0 0 9px 3px #E8E8E8;
