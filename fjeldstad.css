@@ -628,12 +628,13 @@ div.startintro p {
 	margin: 10px 0px 10px 0px;
 }
 
-img.start-minibild.dropshadow,
+div.start-minibild img.dropshadow,
 img.dropshadow {
-	-moz-box-shadow: 0 0 5px 5px #eeeeee;
-  	-webkit-box-shadow: 0 0 5px 5px #eeeeee;
-  	box-shadow: 0 0 5px 5px #eeeeee;
+	-moz-box-shadow: 0 0 9px 9px #E8E8E8;
+  	-webkit-box-shadow: 0 0 9px 9px #E8E8E8;
+  	box-shadow: 0 0 9px 9px #E8E8E8;
   	padding: 5px;
   	background-color: #ffffff;
   	border: 1px solid #969696;
+  	margin: 9px;
 }
