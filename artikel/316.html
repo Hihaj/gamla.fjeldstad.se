@@ -1,0 +1,91 @@
+---
+title: Om VR, del 3: Tracking
+permalink: /artikel/316
+---
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sv" lang="sv">
+	<head>
+		<title>Fjeldstad.se - En hel massa artiklar, helt enkelt</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+		<meta name="author" content="Anders Fjeldstad et al."/>
+		<link rel="stylesheet" href="/fjeldstad.css" type="text/css"/>
+		<link rel="shortcut icon" href="/bilder/favicon.ico" type="image/favicon"/>
+		<script type="text/javascript" src="/fjeldstad.js"></script>
+			</head>
+	<body>
+		<div id="box">
+			<div id="box_uppe"></div>
+			<div id="box_mitten">
+				<div id="navigering">
+					<!-- Det a-element som är aktivt ska ha id 'navigering_aktiv' -->
+					<a  href="/start"><img src="/bilder/design/start_inaktiv.jpg" alt="Start"/></a>
+					<a href="/artikelarkiv"><img src="/bilder/design/artikelarkiv_inaktiv.jpg" alt="Artikelarkiv"/></a>
+					<a href="/forfattare"><img src="/bilder/design/forfattare_inaktiv.jpg" alt="Författare"/></a>
+					<a href="/om"><img src="/bilder/design/omfjeldstadse_inaktiv.jpg" alt="Om Fjeldstad.se"/></a>
+					<a href="/kontakt"><img src="/bilder/design/kontakt_inaktiv.jpg" alt="Kontakt"/></a>
+					<a href="/skriv"><img src="/bilder/design/skriv_inaktiv.jpg" alt="Skriv!"/></a>
+				</div>
+				<div id="arbetsyta">
+					<div id="vansterspalt">
+		<div style="margin-top: 30px;"></div>
+	
+	
+		<h3>Relaterade artiklar</h3>
+	<ul>
+				<li><a href="/artikel/342" title="Kollektiv utbildning. Varför inte?">Kollektiv utbildning. Varf&ouml;r inte?</a></li>
+				<li><a href="/artikel/323" title="Vetenskaplig visualisering">Vetenskaplig visualisering</a></li>
+				<li><a href="/artikel/314" title="Om VR, del 5: Interaktion">Om VR, del 5: Interaktion</a></li>
+				<li><a href="/artikel/315" title="Om VR, del 4: Haptisk återkoppling">Om VR, del 4: Haptisk &aring;terkoppling</a></li>
+				<li><a href="/artikel/313" title="Om VR, del 2: Bildskärmsteknik">Om VR, del 2: Bildsk&auml;rmsteknik</a></li>
+				<li><a href="/artikel/312" title="Om VR, del 1: Introduktion">Om VR, del 1: Introduktion</a></li>
+			</ul>
+	
+	
+	<h3>Skriv en kommentar</h3>
+	<form action="/artikel/316" method="post">
+		<div id="kommentarformular">
+			
+			<h6 class="mini"><label for="falt-namn">Ditt namn</label></h6>
+			<input class="specialfalt" type="text" id="falt-namn" name="name" maxlength="30" value=""/>
+
+			<h6 class="mini"><label for="falt-kommentar">Din kommentar</label></h6>
+			<textarea id="falt-kommentar" name="comment" cols="30" rows="8"></textarea>
+
+			<input class="botbane" style="float: right; margin-right: 5px;" type="submit" name="rensa" value="Rensa"/>
+			<input class="knapp" style="float: right; margin-right: 7px;" type="submit" name="spara" value="Spara"/>
+			<div class="clear"></div>
+		</div>
+	</form>
+
+</div>
+<div id="hogerspalt" style="margin-bottom: 0px;">
+	<div id="artikel">
+		<h1>Om VR, del 3: Tracking</h1>
+		<div class="ingress">
+			<p>F&ouml;r att VR-systemet ska kunna anpassa den virtuella milj&ouml;n efter anv&auml;ndaren beh&ouml;vs tekniker f&ouml;r att h&aring;lla reda p&aring; var anv&auml;ndaren befinner sig, vad dennes &ouml;gon och h&auml;nder h&aring;ller p&aring; med och s&aring; vidare. S&aring;dana tekniker faller under omr&aring;det &quot;tracking&quot;.</p>		</div>
+		<div>
+			<p>N&auml;r du tittar p&aring; n&aring;got objekt i verkliga v&auml;rlden och samtidigt r&ouml;r ditt huvud litet i sidled s&aring; ser du naturligtvis att din bild av objektet f&ouml;r&auml;ndras litet. Samma effekt vill man &aring;terskapa inom VR eftersom den &auml;r mycket viktig f&ouml;r den virtuella milj&ouml;ns trov&auml;rdighet. F&ouml;r att kunna g&ouml;ra detta m&aring;ste VR-systemet p&aring; n&aring;got s&auml;tt h&aring;lla reda p&aring; anv&auml;ndarens huvuds position och orientering. Detta kallas <em>tracking </em>och &auml;r ett stort omr&aring;de inom VR, eftersom alla system som inte bildar &auml;kta tredimensionella modeller av den virtuella milj&ouml;n (och ibland de ocks&aring;) beh&ouml;ver anv&auml;nda det.</p><p>Det finns n&aring;gra viktiga egenskaper som ett bra trackingsystem ska uppfylla:</p> <ul>   <li><strong>Stor noggrannhet.</strong> Man vill inte att systemet ska producera s&aring; stora m&auml;tfel att den resulterande renderingen blir lidande.</li>   <li><strong>Snabbhet.</strong> Systemet m&aring;ste omdedelbart bli varse om att anv&auml;ndaren har r&ouml;rt p&aring; sig f&ouml;r att kunna utf&ouml;ra n&ouml;dv&auml;ndiga kompenseringar eller andra ber&auml;kningar.</li>   <li><strong>H&ouml;g uppdateringsfrekvens.</strong> F&ouml;r att uppfatta snabba huvudr&ouml;relser och liknande m&aring;ste trackingsystemet m&auml;ta positioner med mycket korta intervall.</li>   <li><strong>Schysst r&auml;ckvidd.</strong> Anv&auml;ndaren vill ju inte k&auml;nna sig begr&auml;nsad av trackingutrustningen, och d&auml;rf&ouml;r beh&ouml;vs en bra r&auml;ckvidd. Denna beror naturligtvis p&aring; den individuella till&auml;mpningen.</li> </ul> <p>Flera olika typer av trackingl&ouml;sningar finns, och jag t&auml;nkte &ouml;versk&aring;dligt beskriva s&aring;dana som bygger p&aring; mekanik, ultraljud, tr&ouml;ghet, elektromagnetism, bilder och laser.</p> <h3>Mekaniska trackingsystem</h3> <p>Den enklaste formen av trackingsystem bygger p&aring; en mekanisk l&ouml;sning, d&auml;r den punkt man vill sp&aring;ra &auml;r fysiskt kopplad till datorn genom en ledad arm. Armens segment har k&auml;nda l&auml;ngder och ledernas vinkelf&ouml;r&auml;ndringar m&auml;ts p&aring; elektromekanisk v&auml;g. Av naturliga sk&auml;l &auml;r denna typ av l&ouml;sning inte den b&auml;sta f&ouml;r att m&auml;ta anv&auml;ndarens huvuds position.</p> <h3>Ultraljudstracking</h3> <p>Det faktum att ljud har en k&auml;nd hastighet i luft kan utnyttjas f&ouml;r tracking. Om man l&aring;ter anv&auml;ndaren ha en hj&auml;lm med sm&aring; ultraljudsh&ouml;gtalare p&aring; som hela tiden s&auml;nder ut en signal, s&aring; kan man l&aring;ta fasta mikrofoner p&aring; k&auml;nda positioner ta upp ljuden och m&auml;ta tidsskillnader f&ouml;r att f&aring; fram en position f&ouml;r varje h&ouml;gtalare. Minst tre mikrofoner kr&auml;vs f&ouml;rst&aring;s f&ouml;r att man ska kunna f&aring; ut en 3D-position.</p> <p>Om man vill m&auml;ta mer &auml;n bara en position, till exempel hur anv&auml;ndaren vrider p&aring; sin hand, kan det bli litet problematiskt att anv&auml;nda en ultraljudsl&ouml;sning beroende p&aring; att avst&aring;ndet mellan h&ouml;gtalarna m&aring;ste vara ganska stort f&ouml;r att man ska f&aring; en godtagbar noggrannhet. Ett annat problem &auml;r de st&ouml;rningar som kan uppst&aring; om ljudet blockeras av n&aring;gon anledning (till exempel om anv&auml;ndaren h&aring;ller en arm i v&auml;gen).</p> <h3>Tr&ouml;ghetsnavigering</h3> <p>Det finns en metod som kallas f&ouml;r <em>tr&ouml;ghetsnavigering</em> och som m&auml;ter acceleration och rotationshastighet hos den sensor som anv&auml;ndaren har p&aring; sig genom att anv&auml;nda gyroskop och accelerometrar. Systemet utg&aring;r i fr&aring;n ett startl&auml;ge varp&aring; alla ber&auml;kningar bygger, vilket tyv&auml;rr medf&ouml;r att sm&aring; m&auml;tfel tenderar att ackumuleras och bli stora fel ganska snabbt. I &ouml;vrigt &auml;r metoden rimligt snabb och har en h&ouml;g uppdateringsfrekvens.</p> <h3>Hybridtrackingsystem</h3> <p>F&ouml;r att komma runt de individuella nackdelar som respektive trackingmetod har brukar man anv&auml;nda sig av <strong>hybridl&ouml;sningar</strong>. Genom att kombinera ultraljudsteknik med tr&ouml;ghetsnavigering f&aring;r man ett system som svarar snabbt p&aring; f&ouml;r&auml;ndringar och har en bra uppdateringshastighet samtidigt som det kan eliminera ackumulering av fel genom att st&auml;mma av med ultraljudsignaler och d&auml;rmed inte kr&auml;ver n&aring;gon k&auml;nd startpunkt. Dessutom &auml;r det inte lika k&auml;nsligt f&ouml;r att ljudets bana hindras av anv&auml;ndaren eller omgivningen. Ett s&aring;dant system skulle ocks&aring; kunna m&auml;ta elektromagnetiska f&auml;lt (se nedan) f&ouml;r att f&aring; &auml;nnu h&ouml;gre noggrannhet.</p><p>Det &auml;r s&aring;dana h&auml;r hybridtrackingsystem som anv&auml;nds i NVIS p&aring; universitetet h&auml;r i Norrk&ouml;ping. De har en samplingsfrekvens p&aring; ungef&auml;r 180 Hz (en siffra man f&aring;r dividera med antalet &quot;trackingenheter&quot; som best&aring;r av tre s&auml;ndare vardera) och en noggrannhet p&aring; &plusmn;4 mm och &plusmn;0,5&deg;. T&auml;ckningen &auml;r cirka 25 kvadratmeter.</p> <h3>Elektromagnetisk tracking</h3> <p>Det g&aring;r att utnyttja magnetf&auml;lt f&ouml;r tracking. I s&aring;dana system anv&auml;nder man en station&auml;r k&auml;lla som s&auml;nder ut elektromagnetiska signaler i tre plan, och flera mindre mobila sensorer som m&auml;ter signalen i motsvarande plan. R&auml;ckvidden &auml;r under tio meter, och dessutom lider systemet av k&auml;nslighet f&ouml;r st&ouml;rningar, vilket &auml;r en stor nackdel. Noggrannheten &auml;r d&auml;remot mycket stor &ndash; b&auml;ttre &auml;n hybridsystemet som jag nyss ber&auml;ttade om. Samplingsfrekvensen ligger p&aring; cirka 120 Hz och &auml;r oberoende av antalet sensorer.</p> <h3>Lasertracking</h3> <p>Tracking vore v&auml;l inget h&auml;ftigt om man inte kunde anv&auml;nda laser, v&auml;l? Hm, ja hursomhelst s&aring; g&aring;r det. En &quot;laserscanner&quot; med tv&aring; laserk&auml;llor skannar av rummet och m&auml;ter avst&aring;ndet till en trepunktssensor som till exempel kan vara f&auml;st p&aring; anv&auml;ndarens huvud. Eftersom sensorn har just tre punkter f&aring;r systemet information om 3D-position samt rotation kring alla tre axlar, allts&aring; sex frihetsgrader totalt.</p> <p>Samplingsfrekvensen &auml;r h&ouml;g j&auml;mf&ouml;rt med andra l&ouml;sningar: hela 240 Hz. Noggrannheten &auml;r godtagbar och ligger p&aring; &plusmn;1 mm respektive &plusmn;1&deg;. Lasersystemet &auml;r inte k&auml;nsligt f&ouml;r st&ouml;rningar och har inget ackumulerande fel, men risken finns att laserstr&aring;larna skyms av objekt i rummet eller anv&auml;ndaren sj&auml;lv.</p> <h3>Optisk och bildbaserad tracking</h3> <p>Du kanske har sett hur &quot;motion capture&quot; f&ouml;r film ofta g&aring;r till? En sk&aring;despelare har p&aring; sig en speciell dr&auml;kt med tydliga vita punkter, och dennes r&ouml;relser registreras av mer eller mindre vanliga videokameror (man filmar i det infrar&ouml;da omr&aring;det av spektrat) som st&aring;r uppst&auml;llda runtomkring i rummet. Genom att man anv&auml;nder flera kameror med k&auml;nda positioner (minst tre men &auml;nnu hellre fler) kan man r&auml;kna ut avst&aring;ndet till de olika punkterna p&aring; dr&auml;kten. Fr&aring;n denna information f&aring;r man ut hur det &quot;skelett&quot; som binder samman punkterna har r&ouml;rt sig. Systemet &auml;r allts&aring; helt beroende av bildbehandlingsmetoder.</p><p>Det finns &auml;ven <strong>bildbaserade varianter</strong> som trackar &ouml;gonen direkt fr&aring;n r&ouml;rliga bilder, allts&aring; helt utan att anv&auml;ndaren beh&ouml;ver ha n&aring;gon specialutrustning p&aring; sig. Detta &auml;r dock i dagsl&auml;get inte lika effektivt och anv&auml;nds d&auml;rf&ouml;r inte mycket.&nbsp;</p><p><strong>S&aring;d&auml;r ja</strong>, nu har vi tittat litet p&aring; detta med tracking. Jag hoppas att jag har lyckats lyfta fram problematiken och &aring;tminstone litet grand om olika system som f&ouml;rs&ouml;ker l&ouml;sa uppgiften. N&auml;sta artikel kommer att handla om <em>haptik,</em> ett omr&aring;de som &auml;r helt beroende av v&auml;l fungerande tracking.<br /> </p>		</div>
+		<div id="signatur">
+						<a href="/forfattare/1"><img src="/bilder/forfattarbilder/1.jpg" alt="Anders Fjeldstad"/></a>
+						<p style="padding-top: 60px;">
+				<a href="/forfattare/1">Anders Fjeldstad</a><br/>
+				Publicerad 16 oktober 2005			</p>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+					<div style="clear: both;"></div>
+				</div>
+				<div id="sidfot">
+					<p>Copyright &copy; 2005 <a href="/forfattare">Anders Fjeldstad et al.</a></p>
+				</div>
+			</div>
+			<div id="box_nere"></div>
+		</div>
+		<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			_uacct = "UA-342048-1";
+			urchinTracker();
+		</script>
+	</body>
+</html>
